@@ -3,25 +3,11 @@
 #include <fstream>
 
 #include "SFML/Graphics.hpp"
-#include "Config.h"
+#include "A2/Game.h"
 
 int main(int argc, char* argv[])
 {
-    Config config("resource/A1/config.txt");
-    sf::RenderWindow& window = config.GetWindow();
-    window.setFramerateLimit(60); 
-    std::vector<Shape>& shapes = config.GetShapes();
-
-    while (window.isOpen())
-    {
-        window.clear();    
-        for (auto& shape : shapes)
-        {
-            shape.update();
-            shape.Draw(window);
-        }
-        window.display();               
-    }
-
+    Game game("resource/A2/config.txt");
+    game.run();
     return 0;
 }

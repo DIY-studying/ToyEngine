@@ -1,5 +1,6 @@
 #include "Shape.h"
 
+
 Shape::Shape(const sf::Vector2f& speed, const sf::Font& font, std::shared_ptr<sf::Shape> shape, TypeName type)
 	:m_speed(speed),m_text(font),m_shape(shape),m_type(type)
 {
@@ -31,7 +32,7 @@ void Shape::SetName(const std::string& name)
 
 void Shape::SetNameSize(size_t size)
 {
-	m_text.setCharacterSize(size);
+	m_text.setCharacterSize((unsigned int)size);
 }
 
 

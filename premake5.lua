@@ -12,11 +12,10 @@ outputdir = "%{cfg.buildcfg}"
 
 IncludeDir={}
 IncludeDir["sfml"]="ToyEngine/vendor/sfml/include/"
+IncludeDir["imgui"]="ToyEngine/vendor/imgui"
 
 LibDir={}
 LibDir["sfml"]="ToyEngine/vendor/sfml/lib"
-
-
 
 
 project "ToyEngine"
@@ -32,19 +31,28 @@ project "ToyEngine"
 
    files
    {
-    "%{prj.name}/src/**.h",
-    "%{prj.name}/src/**.cpp",
+    "%{prj.name}/src/A2/**.h",
+    "%{prj.name}/src/A2/**.cpp",
+    "%{prj.name}/src/main.cpp",
+    "%{IncludeDir.imgui}/**.h",
+    "%{IncludeDir.imgui}/**.cpp"
    }
 
    includedirs
    {
     "%{prj.name}/src",
     "%{IncludeDir.sfml}",
+    "%{IncludeDir.imgui}",
    }
 
    libdirs
    {
     "%{LibDir.sfml}",
+   }
+
+   links
+   {
+    "opengl32.lib"
    }
 
    filter "system:windows"
