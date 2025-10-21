@@ -4,8 +4,8 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\A2">
-      <UniqueIdentifier>{8F48661C-7BEA-90F2-64A5-A44650E61743}</UniqueIdentifier>
+    <Filter Include="src\A3">
+      <UniqueIdentifier>{9048661C-7CEA-90F2-65A5-A44651E61743}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -15,20 +15,41 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\A2\Components.h">
-      <Filter>src\A2</Filter>
+    <ClInclude Include="src\A3\Action.h">
+      <Filter>src\A3</Filter>
     </ClInclude>
-    <ClInclude Include="src\A2\Entity.h">
-      <Filter>src\A2</Filter>
+    <ClInclude Include="src\A3\Animation.h">
+      <Filter>src\A3</Filter>
     </ClInclude>
-    <ClInclude Include="src\A2\EntityManager.h">
-      <Filter>src\A2</Filter>
+    <ClInclude Include="src\A3\Assets.h">
+      <Filter>src\A3</Filter>
     </ClInclude>
-    <ClInclude Include="src\A2\Game.h">
-      <Filter>src\A2</Filter>
+    <ClInclude Include="src\A3\Components.h">
+      <Filter>src\A3</Filter>
     </ClInclude>
-    <ClInclude Include="src\A2\Vec2.h">
-      <Filter>src\A2</Filter>
+    <ClInclude Include="src\A3\Entity.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\EntityManager.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\GameEngine.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\Physics.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\Scene.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\Scene_Menu.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\Scene_Play.h">
+      <Filter>src\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\A3\vec2.h">
+      <Filter>src\A3</Filter>
     </ClInclude>
     <ClInclude Include="vendor\imgui\imconfig-SFML.h">
       <Filter>vendor\imgui</Filter>
@@ -59,17 +80,41 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\A2\Entity.cpp">
-      <Filter>src\A2</Filter>
+    <ClCompile Include="src\A3\Action.cpp">
+      <Filter>src\A3</Filter>
     </ClCompile>
-    <ClCompile Include="src\A2\EntityManager.cpp">
-      <Filter>src\A2</Filter>
+    <ClCompile Include="src\A3\Animation.cpp">
+      <Filter>src\A3</Filter>
     </ClCompile>
-    <ClCompile Include="src\A2\Game.cpp">
-      <Filter>src\A2</Filter>
+    <ClCompile Include="src\A3\Assets.cpp">
+      <Filter>src\A3</Filter>
     </ClCompile>
-    <ClCompile Include="src\A2\Vec2.cpp">
-      <Filter>src\A2</Filter>
+    <ClCompile Include="src\A3\Entity.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\EntityManager.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\GameEngine.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\Physics.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\Scene.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\Scene_Menu.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\Scene_Play.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\main.cpp">
+      <Filter>src\A3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A3\vec2.cpp">
+      <Filter>src\A3</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
