@@ -17,14 +17,15 @@ public:
     vec2 prevPos = {0.0, 0.0};
     vec2 velocity = {0.0, 0.0};
     vec2 scale = {1.0, 1.0};
+    float speed = 0;
     float angle = 0;
 
     CTransform() = default;
 
     explicit CTransform(const vec2 &p) : pos(p) {}
 
-    CTransform(const vec2 &p, const vec2 &sp, const vec2 &sc, float a)
-            : pos(p), prevPos(p), velocity(sp), scale(sc), angle(a) {}
+    CTransform(const vec2 &p, const vec2 &sp, const vec2 &sc=vec2(1.0f,1.0f), float a = 0)
+            : pos(p), prevPos(p), velocity(sp),scale(sc), angle(a) { }
 };
 
 class CLifespan : public Component {

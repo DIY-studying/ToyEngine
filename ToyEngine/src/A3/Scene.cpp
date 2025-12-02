@@ -43,10 +43,14 @@ const ActionMap &Scene::getActionMap() const {
 }
 
 void Scene::drawLine(const vec2 &p1, const vec2 &p2) {
+    sf::Vertex ver1;
+    ver1.position = sf::Vector2f(p1.x, p1.y);
+    sf::Vertex ver2;
+    ver2.position = sf::Vector2f(p2.x, p2.y);
     sf::Vertex line[] = {
-            sf::Vertex(sf::Vector2f(p1.x, p1.y)),
-            sf::Vertex(sf::Vector2f(p2.x, p2.y))
+            ver1,
+            ver2
     };
 
-    m_game->window().draw(line, 2, sf::Lines);
+    m_game->window().draw(line, 2,sf::PrimitiveType::Lines);
 }

@@ -13,6 +13,8 @@ class Assets {
     std::map<std::string, sf::Texture> m_textureMap;
     std::map<std::string, Animation> m_animationMap;
     std::map<std::string, sf::Font> m_fontMap;
+public:
+    std::string m_assertDir;
 
 public:
     Assets();

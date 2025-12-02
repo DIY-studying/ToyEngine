@@ -42,6 +42,11 @@ vec2 vec2::operator/=(const float val) {
     return *this;
 }
 
+vec2::operator bool()
+{
+    return x == 0 && y == 0;
+}
+
 bool vec2::operator==(const vec2 &rhs) const {
     return x == rhs.x && y == rhs.y;
 }
@@ -60,9 +65,20 @@ float vec2::length_squared() const {
 
 vec2 vec2::normalize() {
     float l = length();
+    if (l == 0)
+        return *this;
     x /= l;
     y /= l;
     return *this;
+}
+
+vec2 vec2::normalize() const
+{
+    float l = length();
+    if (l == 0)
+        return vec2(0,0);
+    
+    return vec2(x / l, y / l);
 }
 
 float point2::epsilon = 0.001f;
@@ -82,9 +98,6 @@ bool point2::operator!=(const point2 &rhs) const {
 }
 
 float point2::distance(point2 p) const {
-    // float dx = rhs.x - x;
-    // float dy = rhs.y - y;
-    // return std::sqrt(dx * dx + dy * dy);
     return (p - *this).length();
 }
 

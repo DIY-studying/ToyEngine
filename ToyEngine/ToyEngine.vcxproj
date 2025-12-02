@@ -140,7 +140,6 @@ copy /B /Y "vendor\sfml\bin\sfml-window-3.dll" "bin\Release\ToyEngine"</Command>
     <ClCompile Include="src\A3\Scene.cpp" />
     <ClCompile Include="src\A3\Scene_Menu.cpp" />
     <ClCompile Include="src\A3\Scene_Play.cpp" />
-    <ClCompile Include="src\A3\main.cpp" />
     <ClCompile Include="src\A3\vec2.cpp" />
     <ClCompile Include="src\main.cpp">
       <ObjectFileName>$(IntDir)\main1.obj</ObjectFileName>

@@ -8,6 +8,10 @@ Assets::Assets() = default;
 
 void Assets::loadFromFile(const std::string &path) {
     std::ifstream file(path);
+    size_t pos = path.find_last_of("/");
+    pos = (pos == std::string::npos) ? path.length() : pos+1 ;
+    m_assertDir= path.substr(0, pos);
+    std::string head = m_assertDir;
     if (!file) {
         std::cerr << "Could not load " << path << " file!\n";
         exit(-1);
@@ -19,7 +23,7 @@ void Assets::loadFromFile(const std::string &path) {
             std::string name;
             std::string imageFile;
             file >> name >> imageFile;
-            addTexture(name, imageFile);
+            addTexture(name,head+ imageFile);
         } else if (assetType == "Animation") {
             std::string aniName;
             std::string texName;
@@ -31,7 +35,7 @@ void Assets::loadFromFile(const std::string &path) {
             std::string fontName;
             std::string fontPath;
             file >> fontName >> fontPath;
-            addFont(fontName, fontPath);
+            addFont(fontName, head + fontPath);
         } else {
             std::cerr << "Incorrect asset type: " << assetType << "\n";
             exit(-1);
@@ -54,7 +58,7 @@ void Assets::addAnimation(const std::string &name, const Animation &animation) {
 
 void Assets::addFont(const std::string &name, const std::string &path) {
     sf::Font font;
-    if (!font.loadFromFile(path)) {
+    if (!font.openFromFile(path)) {
         std::cerr << "Could not load font: " << path << "\n";
         exit(-1);
     }
@@ -67,11 +71,11 @@ const sf::Texture &Assets::getTexture(const std::string &name) const {
 }
 
 const Animation &Assets::getAnimation(const std::string &name) const {
-    assert(m_animationMap.find(animation_types) != m_animationMap.end());
+    assert(m_animationMap.find(name) != m_animationMap.end());
     return m_animationMap.at(name);
 }
 
 const sf::Font &Assets::getFont(const std::string &name) const {
-    assert(m_fontMap.find(fontName) != m_fontMap.end());
+    assert(m_fontMap.find(name) != m_fontMap.end());
     return m_fontMap.at(name);
 }

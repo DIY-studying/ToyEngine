@@ -1,6 +1,7 @@
 #ifndef VEC2_H
 #define VEC2_H
 
+#include "SFML/Graphics.hpp"
 
 class vec2 {
 public:
@@ -13,6 +14,8 @@ public:
     vec2();
 
     vec2(float xin, float yin);
+
+    inline explicit vec2(const sf::Vector2u& vec) :x(vec.x), y(vec.y) { };
 
 
     vec2 operator*(float val) const;
@@ -27,6 +30,8 @@ public:
 
     vec2 operator/=(float val);
 
+    operator bool();
+
 
     bool operator==(const vec2 &rhs) const;
 
@@ -37,6 +42,7 @@ public:
     [[nodiscard]] float length_squared() const;
 
     vec2 normalize();
+    vec2 normalize() const;
 };
 
 class point2 {
