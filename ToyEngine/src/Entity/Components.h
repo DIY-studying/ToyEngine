@@ -3,8 +3,9 @@
 
 #include <utility>
 
-#include "Animation.h"
-#include "Assets.h"
+#include "core.h"
+#include "system/Animation.h"
+#include "input/Assets.h"
 
 class Component {
 public:

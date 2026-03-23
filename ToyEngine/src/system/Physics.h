@@ -2,8 +2,8 @@
 #define PHYSICS_H
 
 #include <memory>
-#include "Entity.h"
-#include "vec2.h"
+#include "Entity/Entity.h"
+#include "core.h"
 
 
 class Physics {

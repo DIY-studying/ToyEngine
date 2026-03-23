@@ -8,8 +8,9 @@ public:
     float x = 0;
     float y = 0;
 
-    static float epsilon;
+    static const float epsilon;
     static const vec2 kZero;
+    static const float pi;
 
     vec2();
 
@@ -43,6 +44,8 @@ public:
 
     vec2 normalize();
     vec2 normalize() const;
+
+    float dot(vec2 rhs) const;
 };
 
 class point2 {

@@ -3,11 +3,11 @@
 #include "SFML/Window/Event.hpp"
 #include "Scene_Menu.h"
 #include "Scene_Play.h"
-#include "Physics.h"
-#include "Assets.h"
+#include "system/Physics.h"
+#include "input/Assets.h"
 #include "GameEngine.h"
-#include "Components.h"
-#include "Action.h"
+#include "Entity/Components.h"
+#include "input/Action.h"
 
 
 Scene_Menu::Scene_Menu(GameEngine *gameEngine) : Scene(gameEngine),m_menuText(m_game->assets().getFont("Mario"), "default") {
@@ -27,7 +27,7 @@ void Scene_Menu::init() {
     m_menuText.setFont(m_game->assets().getFont("Mario"));
     m_menuText.setCharacterSize(titleSize);
     m_menuText.setFillColor(sf::Color::Black);
-    m_menuText.setPosition(sf::Vector2f(float(m_game->window().getSize().x) / 2.0f - float(titleSize * (m_title.length() + 1)) / 2.0f,
+    m_menuText.setPosition(sf::Vector2f(float(m_game->window()->getSize().x) / 2.0f - float(titleSize * (m_title.length() + 1)) / 2.0f,
         float(titleSize * 3)));
 
     m_menuStrings.emplace_back("LEVEL 1");
@@ -40,7 +40,7 @@ void Scene_Menu::init() {
             text.setFillColor(sf::Color::Black);
         }
         text.setPosition(sf::Vector2f(
-                float(m_game->window().getSize().x) / 2.0f - float(26 * (m_menuStrings[i].length() + 1)) / 2.0f,
+                float(m_game->window()->getSize().x) / 2.0f - float(26 * (m_menuStrings[i].length() + 1)) / 2.0f,
                 m_menuText.getGlobalBounds().size.y + 10.0f + 30.0f * float(i + 1)
         ));
         m_menuItems.push_back(text);
@@ -79,10 +79,10 @@ void Scene_Menu::sDoAction(const Action &action) {
 
 void Scene_Menu::sRender() {
     // set menu background
-    m_game->window().clear(sf::Color(100, 100, 255));
+    m_game->window()->clear(sf::Color(100, 100, 255));
 
     // draw title
-    m_game->window().draw(m_menuText);
+    m_game->window()->draw(m_menuText);
 
     // draw menu items
     for (int i = 0; i < m_menuStrings.size(); i++) {
@@ -93,18 +93,18 @@ void Scene_Menu::sRender() {
         }
 
         m_menuItems[i].setPosition(sf::Vector2f(
-                float(m_game->window().getSize().x) / 2.0f - float(26 * (m_menuStrings[i].length() + 1)) / 2.0f,
+                float(m_game->window()->getSize().x) / 2.0f - float(26 * (m_menuStrings[i].length() + 1)) / 2.0f,
                 m_menuText.getGlobalBounds().size.y + 10.0f + 30.0f * float(i + 1)
         ));
-        m_game->window().draw(m_menuItems[i]);
+        m_game->window()->draw(m_menuItems[i]);
     }
 
     // draw help
     sf::Text help(m_game->assets().getFont("Mario"), "W:UP  S:DOWN  D:PLAY  ESC:BACK/QUIT",  26);
     help.setFillColor(sf::Color::Black);
     help.setPosition(sf::Vector2f(
-            float(m_game->window().getSize().x) / 2.0f - float(26 * (help.getString().getSize() + 1)) / 2.0f,
-            float(m_game->window().getSize().y) - 30.0f * 2.0f
+            float(m_game->window()->getSize().x) / 2.0f - float(26 * (help.getString().getSize() + 1)) / 2.0f,
+            float(m_game->window()->getSize().y) - 30.0f * 2.0f
     ));
-    m_game->window().draw(help);
+    m_game->window()->draw(help);
 }

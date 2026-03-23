@@ -6,8 +6,8 @@
 #include <deque>
 
 #include "SFML/Graphics/Text.hpp"
-#include "Scene.h"
-#include "EntityManager.h"
+#include "scene/Scene.h"
+#include "Entity/EntityManager.h"
 
 
 class Scene_Menu : public Scene {

@@ -4,7 +4,7 @@
 #include <string>
 #include <map>
 
-#include "Animation.h"
+#include "system/Animation.h"
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Texture.hpp>
 

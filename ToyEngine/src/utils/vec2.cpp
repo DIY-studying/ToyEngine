@@ -2,9 +2,11 @@
 #include "vec2.h"
 
 
-float vec2::epsilon = 0.001f;
+const float vec2::epsilon = 0.001f;
 
 const vec2 vec2::kZero{0.0f, 0.0f};
+
+const float vec2::pi= 3.14159265359f;
 
 vec2::vec2() = default;
 
@@ -80,6 +82,12 @@ vec2 vec2::normalize() const
     
     return vec2(x / l, y / l);
 }
+
+float vec2::dot(vec2 rhs) const
+{
+    return rhs.x * x + rhs.y * y;
+}
+
 
 float point2::epsilon = 0.001f;
 
@@ -169,10 +177,7 @@ float angle_radians(vec2 lhs, vec2 rhs) {
     rhs.normalize();
 
     float d = dot(lhs, rhs);
-    if (std::abs(d - 1.0f) < vec2::epsilon) {
-        d = 1.0f;
-    }
-
+  
     return std::acos(d);
 }
 

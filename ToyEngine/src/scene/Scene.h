@@ -3,8 +3,13 @@
 
 #include <memory>
 
-#include "Action.h"
-#include "EntityManager.h"
+#include "input/Action.h"
+#include "Entity/EntityManager.h"
+
+
+#define SCENE_PURE_OVERRIDE_PUB   void update() override;\
+                                                                      void sDoAction(const Action& action) override;\
+                                                                      void sRender() override;
 
 
 class GameEngine;
@@ -25,8 +30,6 @@ protected:
     void setPaused(bool paused);
 
 public:
-
-    Scene();
 
     explicit Scene(GameEngine *gameEngine);
 

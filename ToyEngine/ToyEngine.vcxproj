@@ -107,18 +107,22 @@ copy /B /Y "vendor\sfml\bin\sfml-window-3.dll" "bin\Release\ToyEngine"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\A3\Action.h" />
-    <ClInclude Include="src\A3\Animation.h" />
-    <ClInclude Include="src\A3\Assets.h" />
-    <ClInclude Include="src\A3\Components.h" />
-    <ClInclude Include="src\A3\Entity.h" />
-    <ClInclude Include="src\A3\EntityManager.h" />
-    <ClInclude Include="src\A3\GameEngine.h" />
-    <ClInclude Include="src\A3\Physics.h" />
-    <ClInclude Include="src\A3\Scene.h" />
-    <ClInclude Include="src\A3\Scene_Menu.h" />
-    <ClInclude Include="src\A3\Scene_Play.h" />
-    <ClInclude Include="src\A3\vec2.h" />
+    <ClInclude Include="src\Debug\DebugScene.h" />
+    <ClInclude Include="src\Demo\Scene_Menu.h" />
+    <ClInclude Include="src\Demo\Scene_Play.h" />
+    <ClInclude Include="src\Entity\Components.h" />
+    <ClInclude Include="src\Entity\Entity.h" />
+    <ClInclude Include="src\Entity\EntityManager.h" />
+    <ClInclude Include="src\GameEngine.h" />
+    <ClInclude Include="src\Render\Render.h" />
+    <ClInclude Include="src\core.h" />
+    <ClInclude Include="src\input\Action.h" />
+    <ClInclude Include="src\input\Assets.h" />
+    <ClInclude Include="src\scene\Scene.h" />
+    <ClInclude Include="src\system\Animation.h" />
+    <ClInclude Include="src\system\Physics.h" />
+    <ClInclude Include="src\utils\Shape.h" />
+    <ClInclude Include="src\utils\vec2.h" />
     <ClInclude Include="vendor\imgui\imconfig-SFML.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui-SFML.h" />
@@ -130,20 +134,20 @@ copy /B /Y "vendor\sfml\bin\sfml-window-3.dll" "bin\Release\ToyEngine"</Command>
     <ClInclude Include="vendor\imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\A3\Action.cpp" />
-    <ClCompile Include="src\A3\Animation.cpp" />
-    <ClCompile Include="src\A3\Assets.cpp" />
-    <ClCompile Include="src\A3\Entity.cpp" />
-    <ClCompile Include="src\A3\EntityManager.cpp" />
-    <ClCompile Include="src\A3\GameEngine.cpp" />
-    <ClCompile Include="src\A3\Physics.cpp" />
-    <ClCompile Include="src\A3\Scene.cpp" />
-    <ClCompile Include="src\A3\Scene_Menu.cpp" />
-    <ClCompile Include="src\A3\Scene_Play.cpp" />
-    <ClCompile Include="src\A3\vec2.cpp" />
-    <ClCompile Include="src\main.cpp">
-      <ObjectFileName>$(IntDir)\main1.obj</ObjectFileName>
-    </ClCompile>
+    <ClCompile Include="src\Demo\Scene_Menu.cpp" />
+    <ClCompile Include="src\Demo\Scene_Play.cpp" />
+    <ClCompile Include="src\Entity\Entity.cpp" />
+    <ClCompile Include="src\Entity\EntityManager.cpp" />
+    <ClCompile Include="src\GameEngine.cpp" />
+    <ClCompile Include="src\Render\Render.cpp" />
+    <ClCompile Include="src\input\Action.cpp" />
+    <ClCompile Include="src\input\Assets.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\scene\Scene.cpp" />
+    <ClCompile Include="src\system\Animation.cpp" />
+    <ClCompile Include="src\system\Physics.cpp" />
+    <ClCompile Include="src\utils\Shape.cpp" />
+    <ClCompile Include="src\utils\vec2.cpp" />
     <ClCompile Include="vendor\imgui\imgui-SFML.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_draw.cpp" />

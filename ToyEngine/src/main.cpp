@@ -3,11 +3,13 @@
 #include <fstream>
 
 #include "SFML/Graphics.hpp"
-#include "A3/GameEngine.h"
+#include "core.h"
+#include "GameEngine.h"
 
 int main(int argc, char* argv[])
 {
-    GameEngine game("resource/A3/assets.txt");
+    GameEngine game;
     game.run();
+
     return 0;
 }

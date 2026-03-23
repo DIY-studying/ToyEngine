@@ -31,9 +31,8 @@ project "ToyEngine"
 
    files
    {
-    "%{prj.name}/src/A3/**.h",
-    "%{prj.name}/src/A3/**.cpp",
-    "%{prj.name}/src/main.cpp",
+    "%{prj.name}/src/**.h",
+    "%{prj.name}/src/**.cpp",
     "%{IncludeDir.imgui}/**.h",
     "%{IncludeDir.imgui}/**.cpp"
    }

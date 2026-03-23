@@ -5,9 +5,9 @@
 #include <memory>
 
 #include "SFML/Graphics/Text.hpp"
-#include "Scene.h"
-#include "EntityManager.h"
-#include "Physics.h"
+#include "scene/Scene.h"
+#include "Entity/EntityManager.h"
+#include "system/Physics.h"
 
 
 class Scene_Play : public Scene {

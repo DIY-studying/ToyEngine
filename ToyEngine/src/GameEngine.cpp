@@ -3,23 +3,42 @@
 
 #include "SFML/Window/Event.hpp"
 #include "GameEngine.h"
-#include "Assets.h"
-#include "Scene_Menu.h"
-#include "Scene_Play.h"
+#include "input/Assets.h"
+#include "input/Action.h"
+
+#include "Demo/Scene_Menu.h"
+#include "Demo/Scene_Play.h"
+
+#include "Debug/DebugScene.h"
+
+#include "imgui-SFML.h"
+#include "imgui.h"
 
 
 GameEngine::GameEngine(const std::string &path) {
+    m_window = make_Ref<sf::RenderWindow>(sf::VideoMode(sf::Vector2u(1280, 768)), "Definitely Not Mario");
+    if (!ImGui::SFML::Init(*m_window))
+        std::cout << "imgui init fail.\n";
     init(path);
+}
+
+GameEngine::GameEngine()
+{
+   
+    m_window = make_Ref<sf::RenderWindow>(sf::VideoMode(sf::Vector2u(1280, 768)), "Definitely Not Mario");
+    if (!ImGui::SFML::Init(*m_window))
+        std::cout << "imgui init fail.\n";
+
+    changeScene("DEBUG", make_Ref<DebugScene>(this));
 }
 
 void GameEngine::init(const std::string &path) {
     m_assets.loadFromFile(path);
 
-    m_window.create(sf::VideoMode(sf::Vector2u(1280, 768)), "Definitely Not Mario");
-    m_window.setFramerateLimit(60);
-    m_window.setKeyRepeatEnabled(false);
+    m_window->setFramerateLimit(60);
+    m_window->setKeyRepeatEnabled(false);
 
-    changeScene("MENU", std::make_shared<Scene_Menu>(this));
+    changeScene("DEBUG", make_Ref<DebugScene>(this));
 }
 
 std::shared_ptr<Scene> GameEngine::currentScene() {
@@ -27,24 +46,27 @@ std::shared_ptr<Scene> GameEngine::currentScene() {
 }
 
 bool GameEngine::isRunning() {
-    return m_running && m_window.isOpen();
+    return m_running && m_window->isOpen();
 }
 
-sf::RenderWindow &GameEngine::window() {
+Ref<sf::RenderWindow> GameEngine::window() {
     return m_window;
 }
 
 void GameEngine::run() {
     while (isRunning()) {
+       
         sUserInput();
         update();
-        m_window.display();
+
+        ImGui::SFML::Render(*m_window);
+        m_window->display();
     }
 }
 
 void GameEngine::sUserInput() {
-
-    while (auto event= m_window.pollEvent()) {
+    while (auto event= m_window->pollEvent()) {
+        ImGui::SFML::ProcessEvent(*m_window, *event);
         if (event->is<sf::Event::Closed>()) {
             quit();
         }
@@ -56,8 +78,9 @@ void GameEngine::sUserInput() {
             if (keyPress->code == sf::Keyboard::Key::X) {
                 std::cout << "Save screenshot to " << "test.png" << std::endl;
                 sf::Texture texture;
-                texture.resize(m_window.getSize());
-                texture.update(m_window);
+                if (texture.resize(m_window->getSize()))
+                    std::cout << "texture resize fail.\n";;
+                texture.update(*m_window);
                 if (texture.copyToImage().saveToFile("test.png")) {
                     std::cout << "Screenshot saved to " << "test.png" << std::endl;
                 }
@@ -89,7 +112,7 @@ void GameEngine::changeScene(const std::string &sceneName, std::shared_ptr<Scene
 
 void GameEngine::quit() {
     m_running = false;
-    m_window.close();
+    m_window->close();
 }
 
 void GameEngine::update() {

@@ -2,8 +2,6 @@
 #include "GameEngine.h"
 
 
-Scene::Scene() = default;
-
 Scene::Scene(GameEngine *gameEngine) : m_game(gameEngine) {}
 
 Scene::~Scene() = default;
@@ -23,11 +21,11 @@ void Scene::registerAction(int inputKey, const std::string &actionName) {
 }
 
 size_t Scene::width() const {
-    return m_game->window().getSize().x;
+    return m_game->window()->getSize().x;
 }
 
 size_t Scene::height() const {
-    return m_game->window().getSize().y;
+    return m_game->window()->getSize().y;
 }
 
 size_t Scene::currentFrame() const {
@@ -52,5 +50,5 @@ void Scene::drawLine(const vec2 &p1, const vec2 &p2) {
             ver2
     };
 
-    m_game->window().draw(line, 2,sf::PrimitiveType::Lines);
+    m_game->window()->draw(line, 2,sf::PrimitiveType::Lines);
 }

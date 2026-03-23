@@ -5,15 +5,16 @@
 #include <memory>
 
 #include "SFML/Graphics/RenderWindow.hpp"
-#include "Scene.h"
-#include "Assets.h"
+#include "scene/Scene.h"
+#include "input/Assets.h"
+#include "core.h"
 
 
-typedef std::map<std::string, std::shared_ptr<Scene>> SceneMap;
+typedef std::map<std::string, Ref<Scene>> SceneMap;
 
 class GameEngine {
 protected:
-    sf::RenderWindow m_window;
+    Ref<sf::RenderWindow> m_window;
     Assets m_assets;
     std::string m_currentScene;
     SceneMap m_sceneMap;
@@ -26,10 +27,12 @@ protected:
 
     void sUserInput();
 
-    std::shared_ptr<Scene> currentScene();
+
+   Ref<Scene> currentScene();
 
 public:
     GameEngine(const std::string &path);
+    GameEngine();
 
     void changeScene(const std::string &sceneName, std::shared_ptr<Scene> scene, bool endCurrentScene = false);
 
@@ -37,11 +40,12 @@ public:
 
     void run();
 
-    sf::RenderWindow &window();
+    Ref<sf::RenderWindow> window();
 
     const Assets &assets() const;
 
     bool isRunning();
+ 
 };
 
 #endif //GAME_ENGINE_H

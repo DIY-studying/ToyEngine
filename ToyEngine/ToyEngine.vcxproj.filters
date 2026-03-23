@@ -4,8 +4,29 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\A3">
-      <UniqueIdentifier>{9048661C-7CEA-90F2-65A5-A44651E61743}</UniqueIdentifier>
+    <Filter Include="src\Debug">
+      <UniqueIdentifier>{63A3C3B2-CF0D-7829-184C-29CF84F5557E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Demo">
+      <UniqueIdentifier>{E1341DCF-CD01-78DA-F61A-6682E246AD68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Entity">
+      <UniqueIdentifier>{D9C2390E-C57A-7B5B-2E82-54B71A59164C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Render">
+      <UniqueIdentifier>{FC94E62B-E84C-2879-5154-01D53D2BC369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\input">
+      <UniqueIdentifier>{0C5966B5-78C3-1A2C-C101-CCD12DABF880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\scene">
+      <UniqueIdentifier>{2A1615B6-9680-C92C-DFBE-7AD24B68A781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\system">
+      <UniqueIdentifier>{C1BD4D7A-AD75-8FC7-167D-682302542AB8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{6DAA42B6-D914-F72C-2253-A8D28EFCD481}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -15,41 +36,53 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\A3\Action.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Debug\DebugScene.h">
+      <Filter>src\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Animation.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Demo\Scene_Menu.h">
+      <Filter>src\Demo</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Assets.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Demo\Scene_Play.h">
+      <Filter>src\Demo</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Components.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Entity\Components.h">
+      <Filter>src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Entity.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Entity\Entity.h">
+      <Filter>src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\EntityManager.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Entity\EntityManager.h">
+      <Filter>src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\GameEngine.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\GameEngine.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Physics.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\Render\Render.h">
+      <Filter>src\Render</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Scene.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\core.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Scene_Menu.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\input\Action.h">
+      <Filter>src\input</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\Scene_Play.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\input\Assets.h">
+      <Filter>src\input</Filter>
     </ClInclude>
-    <ClInclude Include="src\A3\vec2.h">
-      <Filter>src\A3</Filter>
+    <ClInclude Include="src\scene\Scene.h">
+      <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\system\Animation.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="src\system\Physics.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Shape.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\vec2.h">
+      <Filter>src\utils</Filter>
     </ClInclude>
     <ClInclude Include="vendor\imgui\imconfig-SFML.h">
       <Filter>vendor\imgui</Filter>
@@ -80,44 +113,47 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\A3\Action.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\Demo\Scene_Menu.cpp">
+      <Filter>src\Demo</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\Animation.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\Demo\Scene_Play.cpp">
+      <Filter>src\Demo</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\Assets.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\Entity\Entity.cpp">
+      <Filter>src\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\Entity.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\Entity\EntityManager.cpp">
+      <Filter>src\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\EntityManager.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\GameEngine.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\GameEngine.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\Render\Render.cpp">
+      <Filter>src\Render</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\Physics.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\input\Action.cpp">
+      <Filter>src\input</Filter>
     </ClCompile>
-    <ClCompile Include="src\A3\Scene.cpp">
-      <Filter>src\A3</Filter>
-    </ClCompile>
-    <ClCompile Include="src\A3\Scene_Menu.cpp">
-      <Filter>src\A3</Filter>
-    </ClCompile>
-    <ClCompile Include="src\A3\Scene_Play.cpp">
-      <Filter>src\A3</Filter>
-    </ClCompile>
-    <ClCompile Include="src\A3\main.cpp">
-      <Filter>src\A3</Filter>
-    </ClCompile>
-    <ClCompile Include="src\A3\vec2.cpp">
-      <Filter>src\A3</Filter>
+    <ClCompile Include="src\input\Assets.cpp">
+      <Filter>src\input</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\Scene.cpp">
+      <Filter>src\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\Animation.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\Physics.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Shape.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\vec2.cpp">
+      <Filter>src\utils</Filter>
     </ClCompile>
     <ClCompile Include="vendor\imgui\imgui-SFML.cpp">
       <Filter>vendor\imgui</Filter>

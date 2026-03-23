@@ -1,11 +1,13 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+#include "core.h"
+
 #include <vector>
 #include <string>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
-#include "vec2.h"
+
 
 
 class Animation {
