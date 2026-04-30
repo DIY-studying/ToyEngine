@@ -22,13 +22,13 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -42,15 +42,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>bin\Debug\ToyEngine\</OutDir>
-    <IntDir>bin-int\Debug\ToyEngine\</IntDir>
+    <OutDir>$(ProjectDir)bin\Debug\ToyEngine\</OutDir>
+    <IntDir>$(ProjectDir)bin-int\Debug\ToyEngine\</IntDir>
     <TargetName>ToyEngine</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>bin\Release\ToyEngine\</OutDir>
-    <IntDir>bin-int\Release\ToyEngine\</IntDir>
+    <OutDir>$(ProjectDir)bin\Release\ToyEngine\</OutDir>
+    <IntDir>$(ProjectDir)bin-int\Release\ToyEngine\</IntDir>
     <TargetName>ToyEngine</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -72,6 +72,8 @@
       <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>vendor\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+    </ProjectReference>
     <PostBuildEvent>
       <Command>copy /B /Y "vendor\sfml\bin\sfml-graphics-d-3.dll" "bin\Debug\ToyEngine"
 copy /B /Y "vendor\sfml\bin\sfml-system-d-3.dll" "bin\Debug\ToyEngine"
@@ -100,6 +102,8 @@ copy /B /Y "vendor\sfml\bin\sfml-window-d-3.dll" "bin\Debug\ToyEngine"</Command>
       <AdditionalDependencies>opengl32.lib;sfml-graphics.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>vendor\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+    </ProjectReference>
     <PostBuildEvent>
       <Command>copy /B /Y "vendor\sfml\bin\sfml-graphics-3.dll" "bin\Release\ToyEngine"
 copy /B /Y "vendor\sfml\bin\sfml-system-3.dll" "bin\Release\ToyEngine"
